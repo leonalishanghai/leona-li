@@ -1,3 +1,5 @@
+import '../js/inner-navigation.js';
+
 const elements = [...document.querySelectorAll('[data-reveal]')];
 
 // Keep the opening composition present on first paint; later sections retain

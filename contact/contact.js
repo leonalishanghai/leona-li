@@ -1,3 +1,5 @@
+import '../js/inner-navigation.js';
+
 const elements = [...document.querySelectorAll('[data-reveal]')];
 
 elements.forEach((element) => {

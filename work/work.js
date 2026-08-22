@@ -1,3 +1,5 @@
+import '../js/inner-navigation.js';
+
 import {
   commercialBrandCampaigns,
   commercialEditorialProjects,
