@@ -10,8 +10,8 @@ const gallery = (slug, title, count) => Array.from({ length: count }, (_, index)
 });
 
 const sourceImage = (slug, filename, alt) => ({
-  small: `/leona-li/assets/images/work/projects/${slug}/${filename}`,
-  large: `/leona-li/assets/images/work/projects/${slug}/${filename}`,
+  small: `/leona-li/assets/images/work/projects/${slug}/${filename.replace(/\.[^.]+$/, '')}-900.webp`,
+  large: `/leona-li/assets/images/work/projects/${slug}/${filename.replace(/\.[^.]+$/, '')}-1800.webp`,
   alt,
 });
 
@@ -313,7 +313,7 @@ export const creativeProductionProjects = [
     category: 'Fashion Lookbook / Campaign Production',
     filter: 'creative-production',
     year: '2025',
-    roleSummary: 'Creative Production / Visual Direction / Photography',
+    roleSummary: 'Creative Production / Visual Direction Support / Production Coordination / On-set Execution / Photography Supervision',
     brandContext: 'Karl Lagerfeld is a global fashion house with a distinctive, modern visual identity. The SS25 production connected campaign impact with the relaxed rhythm of the seasonal lookbook.',
     projectOverview: 'Supported the translation of the SS25 collection into a cohesive campaign and lookbook language through creative coordination, production planning and on-set collaboration.',
     description: 'A fashion campaign project developed for Karl Lagerfeld SS25 collection, supporting the translation of seasonal brand vision into a cohesive visual language through creative coordination, production workflow and on-set collaboration.',
@@ -323,7 +323,7 @@ export const creativeProductionProjects = [
       {
         title: 'Karl Lagerfeld SS25 Campaign',
         description: 'A fashion campaign project developed for Karl Lagerfeld SS25 collection, supporting the translation of seasonal brand vision into a cohesive visual language through creative coordination, production workflow and on-set collaboration.',
-        roles: ['Production Support', 'Creative Coordination', 'Visual Research', 'On-set Collaboration', 'Photography'],
+        roles: ['Production Coordination', 'Visual Direction Support', 'On-set Execution', 'Photography Supervision'],
         images: karlCampaignImages,
       },
       {
@@ -354,11 +354,11 @@ export const creativeProductionProjects = [
     category: 'Technology / Lifestyle Storytelling',
     filter: 'creative-production',
     year: '2025',
-    roleSummary: 'Creative Direction / Photography / Visual Content Development',
+    roleSummary: 'Visual Concept Development / Creative Production / Photography',
     description: 'A product experience project connecting technology, movement and everyday lifestyle through visual storytelling.',
     brandContext: 'Shokz is a global technology brand known for innovative open-ear audio products, combining sound, movement and everyday lifestyle experiences.',
     projectOverview: 'This project focused on translating Shokz’s product innovation into a visual story connecting technology with active lifestyles. Through lifestyle-driven imagery and product storytelling, the production communicated the balance between functionality, comfort and modern movement.',
-    roles: ['Creative Direction', 'Visual Concept Development', 'Photography', 'Lifestyle Storytelling', 'Production Coordination'],
+    roles: ['Visual Concept Development', 'Creative Production', 'Photography', 'Lifestyle Storytelling', 'Production Coordination'],
     cover: sourceImage('shokz-product-campaign', 'cover.jpg', 'Shokz Product Experience cover'),
     gallery: sourceGallery('shokz-product-campaign', 'Shokz Product Experience', ['01.jpg', '02.jpg', '03.jpg']),
   },
@@ -371,11 +371,11 @@ export const creativeProductionProjects = [
     category: 'Campaign Production / Lifestyle',
     filter: 'creative-production',
     year: '2025',
-    roleSummary: 'Creative Direction / Campaign Production / Photography',
+    roleSummary: 'Visual Direction Support / Campaign Production / Photography',
     description: 'A campaign study connecting movement, urban environment and contemporary lifestyle identity.',
     brandContext: 'FILA is a global sportswear brand blending athletic heritage with contemporary fashion culture.',
     projectOverview: 'This project explored the relationship between movement, urban environment and lifestyle identity, creating visual narratives that connect performance and everyday expression.',
-    roles: ['Creative Direction', 'Campaign Production', 'Photography'],
+    roles: ['Visual Direction Support', 'Campaign Production', 'Photography'],
     cover: sourceImage('fila-urban-lifestyle', 'cover.JPG', 'FILA Urban Movement cover'),
     gallery: sourceGallery('fila-urban-lifestyle', 'FILA Urban Movement', ['01.JPG', '02.JPG', '03.JPG', '04.JPG', '05.JPG', '06.JPG', '07.JPG', '08.JPG']),
   },

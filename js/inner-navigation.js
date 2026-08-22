@@ -29,6 +29,8 @@ if (primaryNavigation && header) {
     if (restoreFocus) toggle.focus();
   };
 
+  const focusable = () => [toggle, ...menu.querySelectorAll('a')];
+
   const open = () => {
     toggle.setAttribute('aria-expanded', 'true');
     toggle.querySelector('span').textContent = 'Close';
@@ -45,7 +47,23 @@ if (primaryNavigation && header) {
   menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => close()));
 
   window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && !menu.hidden) close({ restoreFocus: true });
+    if (menu.hidden) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      close({ restoreFocus: true });
+      return;
+    }
+    if (event.key !== 'Tab') return;
+    const items = focusable();
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   });
 
   window.addEventListener('resize', () => {

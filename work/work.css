@@ -24,7 +24,6 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
@@ -1720,6 +1719,13 @@ a {
   .project-detail__pagination {
     margin-right: 20px;
     margin-left: 20px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .project-detail__pagination a {
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .creative-profile,

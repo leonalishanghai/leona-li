@@ -8,7 +8,9 @@ elements.forEach((element) => {
   }
 });
 
-if (!('IntersectionObserver' in window)) {
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (prefersReducedMotion || !('IntersectionObserver' in window)) {
   elements.forEach((element) => element.classList.add('is-visible'));
 } else {
   const observer = new IntersectionObserver(

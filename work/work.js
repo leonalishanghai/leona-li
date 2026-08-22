@@ -15,17 +15,18 @@ import {
 const categoryLabels = {
   fashion: 'Fashion / Selected Projects',
   commercial: 'Selected commercial works across fashion, product and editorial assignments.',
-  portrait: 'Personal Portraits / Selected Projects',
+  portrait: 'Portrait Photography / Selected Projects',
   'creative-production': 'Creative Production / Selected Projects',
 };
 
 function picture(image, options = {}) {
   const loading = options.priority ? '' : ' loading="lazy"';
   const priority = options.priority ? ' fetchpriority="high"' : '';
+  const sizes = options.sizes || '(max-width: 760px) 100vw, 84vw';
   return `
     <picture>
-      <source media="(max-width: 760px)" srcset="${image.small}" />
-      <img src="${image.large}" alt="${image.alt}"${loading}${priority} decoding="async" />
+      <source type="image/webp" srcset="${image.small} 900w, ${image.large} 1800w" sizes="${sizes}" />
+      <img src="${image.large}" srcset="${image.small} 900w, ${image.large} 1800w" sizes="${sizes}" alt="${image.alt}"${loading}${priority} decoding="async" />
     </picture>
   `;
 }
@@ -191,7 +192,7 @@ function renderArchive() {
     },
     {
       category: 'portrait',
-      heading: 'Personal Portraits',
+      heading: 'Portrait Photography',
       projects: personalPortraitProjects,
     },
     {
